@@ -1,0 +1,55 @@
+<h1>GROUP AWESOME</h1>
+
+<a href="/auth/twitter" >iniciar sesion con Twitter </a>
+<td>
+  <td>
+  <%= @name %>
+  
+  
+  <%= image_tag @avatar  %>
+  
+  </td>
+</td>
+
+<table>
+
+  <tr>
+    <th>Name</th>
+    <td>
+      <td>
+        <th>Description</th>
+      </td>
+    </td>
+    <td>
+      <td>
+        <th>Image</th>
+      </td>
+    </td>
+    <td>
+      <td>
+        <th>other</th>
+        </td>
+    </td>
+    <th>muajaja</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ideas.each do |idea| %>
+  <tr>
+    <td><strong><%= idea.name %></strong></td>
+    <td><td><td><td><%= idea.description %></td></td></td></td>
+    <td><td><td><%= image_tag idea.picture, width: "100px", height:"70px" %></td></td></td>
+    
+    
+    <td><td><%= link_to 'Show', idea %></td></td>
+
+    <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+    <td><%= link_to "compartir", share_idea_path(idea)  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Idea', new_idea_path %>
